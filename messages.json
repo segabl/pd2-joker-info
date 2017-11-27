@@ -1,0 +1,92 @@
+{
+  "death" : [
+    {
+      "threshold" : 0,
+      "texts" : [
+        "<N> died to <A>, being absolutely useless.",
+        "<N> didn't know how to use a gun and stood no chance against <A>.",
+        "<N> got wasted by <A> while staring at a wall."
+      ]
+    },
+    {
+      "threshold" : 1,
+      "texts" : [
+        "<N> was a complete noob and could only get a single kill before dying to <A>.",
+        "<A> shot first and killed <N>."
+      ]
+    },
+    { 
+      "threshold" : 5,
+      "texts" : [
+        "<N> didn't even try and only killed <K> enemies before getting killed by <A>.",
+        "<N> died to <A> with a sub-par kill count of <K>.",
+        "<N> didn't pay attention in gun training and could only score <K> kills before dying to <A>."
+      ]
+    },
+    { 
+      "threshold" : 15,
+      "texts" : [
+        "<N> proved somewhat useful by scoring <K> kills before getting ended by <A>.",
+        "<N> felt pretty confident and scored <K> kills before being killed by <A>."
+      ]
+    },
+    { 
+      "threshold" : 30,
+      "texts" : [
+        "<N> was especially trigger-happy, killing <K> of his comrades before being ended by <A>.",
+        "YouTube tutorials helped <N> get <K> kills before they were killed by <A>."
+      ]
+    },
+    { 
+      "threshold" : 50,
+      "texts" : [
+        "<N> went on a killing spree, scoring <K> kills before they died to <A>.",
+        "<N> really started to fit into the PAYDAY gang, killing <K> enemies before being put down by <A>."
+      ]
+    },
+    {
+      "threshold" : 80,
+      "texts" : [
+        "<N> went down to <A> having mercilessly slaughtered <K> fellow colleagues.",
+        "<N> really hated their old job and went on a rampage resulting in their death by <A> and <K> kills.",
+        "<A> stopped the insane killing spree of <N> after they accumulated <K> kills."
+      ]
+    },
+    {
+      "threshold" : 100,
+      "texts" : [
+        "<N> somehow managed to even put the PAYDAY gang to shame, ending the lives of <K> enemies before dying to <A>."
+      ]
+    }
+  ],
+  "survive" : [
+    {
+      "threshold" : 0,
+      "texts" : [
+        "<N> survived unharmed but didn't engage in combat at all.",
+        "<N> hid like a coward and therefore survived."
+      ]
+    },
+    {
+      "threshold" : 1,
+      "texts" : [
+        "One shot, one kill. Unfortunately, it stayed at one shot for <N>."
+      ]
+    },
+    {
+      "threshold" : 20,
+      "texts": [
+        "<N> tried at least, and survived with <K> kills."
+      ]
+    },
+    {
+      "threshold" : 40,
+      "texts" : [
+        "<N> didn't acdum and managed to get out alive with <K> kills.",
+        "<N> lived to tell the tale of their amazing kill count of <K>.",
+        "<N> is now in therapy, traumatized from killing <K> people.",
+        "<N> survived the heist with <K> kills and is currently applying for a job in the PAYDAY gang."
+      ]
+    }
+  ]
+}
