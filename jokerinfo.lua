@@ -17,9 +17,9 @@ if not JokerInfo then
   end
   
   Hooks:Add("HopLibOnUnitDied", "HopLibOnUnitDiedJokerInfo", function (unit, damage_info)
-    local info = HopLib.unit_info_manager:get_info(unit)
+    local info = HopLib:unit_info_manager():get_info(unit)
     if info and info._sub_type == "joker" then
-      local attacker_info = HopLib.unit_info_manager:get_user_info(damage_info.attacker_unit)
+      local attacker_info = HopLib:unit_info_manager():get_user_info(damage_info.attacker_unit)
       local text = ""
       for i, v in ipairs(JokerInfo.messages.death) do
         if info._kills <= v.threshold or i == #JokerInfo.messages.death then
@@ -39,7 +39,7 @@ if RequiredScript == "lib/states/missionendstate" then
   function MissionEndState:at_enter(...)
     DelayedCalls:Add("Joker Info", 1, function()
       local text = ""
-      for _, info in pairs(HopLib.unit_info_manager:all_infos()) do
+      for _, info in pairs(HopLib:unit_info_manager():all_infos()) do
         if info._sub_type == "joker" then
           for i, v in ipairs(JokerInfo.messages.survive) do
             if info._kills <= v.threshold or i == #JokerInfo.messages.survive then
