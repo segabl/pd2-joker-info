@@ -18,6 +18,7 @@ if not JokerInfo then
   
   Hooks:Add("HopLibOnUnitDied", "HopLibOnUnitDiedJokerInfo", function (unit, damage_info)
     local info = HopLib:unit_info_manager():get_info(unit)
+    math.randomseed(unit:id())
     if info and info._sub_type == "joker" then
       local attacker_info = HopLib:unit_info_manager():get_user_info(damage_info.attacker_unit)
       local text = ""
@@ -41,6 +42,7 @@ if RequiredScript == "lib/states/missionendstate" then
       local text = ""
       for _, info in pairs(HopLib:unit_info_manager():all_infos()) do
         if info._sub_type == "joker" then
+          math.randomseed(info._unit:id())
           for i, v in ipairs(JokerInfo.messages.survive) do
             if info._kills <= v.threshold or i == #JokerInfo.messages.survive then
               text = text .. table.random(v.texts):gsub("<N>", info:nickname()):gsub("<K>", tostring(info._kills)) .. "\n"
