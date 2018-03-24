@@ -18,13 +18,13 @@ if not JokerInfo then
   
   Hooks:Add("HopLibOnUnitDied", "HopLibOnUnitDiedJokerInfo", function (unit, damage_info)
     local info = HopLib:unit_info_manager():get_info(unit)
-    math.randomseed(unit:id())
-    if info and info._sub_type == "joker" then
+    if info and info:sub_type() == "joker" then
+      math.randomseed(info:id())
       local attacker_info = HopLib:unit_info_manager():get_user_info(damage_info.attacker_unit)
       local text = ""
       for i, v in ipairs(JokerInfo.messages.death) do
-        if info._kills <= v.threshold or i == #JokerInfo.messages.death then
-          text = table.random(v.texts):gsub("<N>", info:nickname()):gsub("<K>", tostring(info._kills)):gsub("<A>", attacker_info and attacker_info:nickname() or "an unknown force")
+        if info:kills() <= v.threshold or i == #JokerInfo.messages.death then
+          text = table.random(v.texts):gsub("<N>", info:nickname()):gsub("<K>", tostring(info:kills())):gsub("<A>", attacker_info and attacker_info:nickname() or "an unknown force")
           break
         end
       end
@@ -41,11 +41,11 @@ if RequiredScript == "lib/states/missionendstate" then
     DelayedCalls:Add("Joker Info", 1, function()
       local text = ""
       for _, info in pairs(HopLib:unit_info_manager():all_infos()) do
-        if info._sub_type == "joker" then
-          math.randomseed(info._unit:id())
+        if info:sub_type() == "joker" then
+          math.randomseed(info:id())
           for i, v in ipairs(JokerInfo.messages.survive) do
-            if info._kills <= v.threshold or i == #JokerInfo.messages.survive then
-              text = text .. table.random(v.texts):gsub("<N>", info:nickname()):gsub("<K>", tostring(info._kills)) .. "\n"
+            if info:kills() <= v.threshold or i == #JokerInfo.messages.survive then
+              text = text .. table.random(v.texts):gsub("<N>", info:nickname()):gsub("<K>", tostring(info:kills())) .. "\n"
               break
             end
           end
