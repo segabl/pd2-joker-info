@@ -5,7 +5,6 @@ end
 if not JokerInfo then
   _G.JokerInfo = {}
   
-  JokerInfo.modded_peers = {}
   JokerInfo.modded_host = false
 
   JokerInfo.messages = {}
@@ -46,11 +45,7 @@ if not JokerInfo then
             attacker = attacker_info and attacker_info:nickname()
           }
           managers.chat:_receive_message(1, "Joker Info", JokerInfo:create_text(data, index), tweak_data.system_chat_color)
-          for id, peer in ipairs(LuaNetworking:GetPeers()) do
-            if JokerInfo.modded_peers[id] then
-              LuaNetworking:SendToPeer(id, "joker_info", json.encode(data))
-            end
-          end
+          LuaNetworking:SendToPeers("joker_info", json.encode(data))
           break
         end
       end
@@ -70,7 +65,6 @@ if not JokerInfo then
       if sender == 1 then
         JokerInfo.modded_host = true
       else
-        JokerInfo.modded_peers[sender] = true
         LuaNetworking:SendToPeer(sender, "has_joker_info", "")
       end
     end
@@ -97,11 +91,7 @@ if RequiredScript == "lib/states/missionendstate" then
                 kills = info:kills()
               }
               managers.chat:_receive_message(1, "Joker Info", JokerInfo:create_text(data, index), tweak_data.system_chat_color)
-              for id, peer in ipairs(LuaNetworking:GetPeers()) do
-                if JokerInfo.modded_peers[id] then
-                  LuaNetworking:SendToPeer(id, "joker_info", json.encode(data))
-                end
-              end
+              LuaNetworking:SendToPeers("joker_info", json.encode(data))
               break
             end
           end
