@@ -47,7 +47,7 @@
       ]
     },
     {
-      "threshold" : 60,
+      "threshold" : 50,
       "texts" : [
         "<N> went on a killing spree, scoring <K> kills before they died to <A>.",
         "<N> really started to fit into the PAYDAY gang, killing <K> enemies before being put down by <A>.",
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "threshold" : 40,
+      "threshold" : 100,
       "texts" : [
         "<N> didn't acdum and managed to get out alive with <K> kills.",
         "<N> lived to tell the tale of their amazing kill count of <K>.",
