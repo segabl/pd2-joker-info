@@ -78,7 +78,7 @@
       "threshold" : 1,
       "texts" : [
         "One shot, one kill. Unfortunately, it stayed at one shot for <N>.",
-        "<N> didn't get the chance to press the trigger more than once before the end of the heist.",
+        "<N> didn't get the chance to pull the trigger more than once before the end of the heist.",
         "<N> was close to useless, only killing one enemy before the heist end."
       ]
     },
