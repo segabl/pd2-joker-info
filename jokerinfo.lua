@@ -34,7 +34,7 @@ if not JokerInfo then
     end
     local info = HopLib:unit_info_manager():get_info(unit)
     if info and info:sub_type() == "joker" then
-      local attacker_info = HopLib:unit_info_manager():get_user_info(damage_info.attacker_unit)
+      local attacker_info = HopLib:unit_info_manager():get_info(damage_info.attacker_unit)
       if not attacker_info then
         return
       end
