@@ -31,7 +31,7 @@ if not JokerInfo then
 			return
 		end
 		local info = HopLib:unit_info_manager():get_info(unit)
-		if info and info:sub_type() == "joker" then
+		if info and info:type() == "joker" then
 			local attacker_info = HopLib:unit_info_manager():get_info(damage_info.attacker_unit)
 			if not attacker_info then
 				return
@@ -82,7 +82,7 @@ if RequiredScript == "lib/states/missionendstate" then
 				return
 			end
 			for _, info in pairs(HopLib:unit_info_manager():all_infos()) do
-				if info:sub_type() == "joker" then
+				if info:type() == "joker" then
 					for i, v in ipairs(JokerInfo.messages.survive) do
 						if info:kills() <= v.threshold or i == #JokerInfo.messages.survive then
 							local data = {
