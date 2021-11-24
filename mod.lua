@@ -45,7 +45,7 @@ if not JokerInfo then
 						kills = info:kills(),
 						attacker = attacker_info and attacker_info:nickname()
 					}
-					managers.chat:_receive_message(1, "Joker Info", JokerInfo:create_text(data, index), tweak_data.system_chat_color)
+					managers.chat:_receive_message(1, "Joker Info", JokerInfo:create_text(data, i), tweak_data.system_chat_color)
 					LuaNetworking:SendToPeers("joker_info", json.encode(data))
 					break
 				end
@@ -91,7 +91,7 @@ if RequiredScript == "lib/states/missionendstate" then
 								name = info:nickname(),
 								kills = info:kills()
 							}
-							managers.chat:_receive_message(1, "Joker Info", JokerInfo:create_text(data, index), tweak_data.system_chat_color)
+							managers.chat:_receive_message(1, "Joker Info", JokerInfo:create_text(data, i), tweak_data.system_chat_color)
 							LuaNetworking:SendToPeers("joker_info", json.encode(data))
 							break
 						end
