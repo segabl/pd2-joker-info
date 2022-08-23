@@ -25,7 +25,7 @@ if not JokerInfo then
 		local fixed_rnd = ((data.rnd - 1) % #text_table[index].texts) + 1
 		return text_table[index].texts[fixed_rnd]:gsub("<N>", data.name):gsub("<K>", tostring(data.kills)):gsub("<A>", data.attacker or "an unknown force")
 	end
-	
+
 	Hooks:Add("HopLibOnUnitDied", "HopLibOnUnitDiedJokerInfo", function (unit, damage_info)
 		if JokerInfo.modded_host then
 			return
@@ -70,7 +70,7 @@ if not JokerInfo then
 			end
 		end
 	end)
-	
+
 end
 
 if RequiredScript == "lib/states/missionendstate" then
